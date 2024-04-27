@@ -8,22 +8,14 @@
 ;;
 ;; To get a development container (emacs shell will work)
 ;;
-;;   guix shell -C -D -f guix.scm
-;;
-;; For the tests you need /bin/bash. In a container create it with
-;;
-;;   mkdir -p /bin ; ln -s $GUIX_ENVIRONMENT/bin/bash /bin/bash
+;;   guix shell -C -D -F -f guix.scm
 ;;
 ;; To find tools
 ;;
 ;;   cd build
 ;;   cmake .. -DCMAKE_MAKE_PROGRAM=make -DCMAKE_C_COMPILER=gcc
 ;;   cmake --build . --verbose
-;;
-;; and run the tests with
-;;
-;;   env CC=gcc make
-;;   ./tests/wfa.utest.sh
+;;   ctest .
 
 (use-modules
  ((guix licenses) #:prefix license:)
